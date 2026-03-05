@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Cairo:wght@200..1000&family=Jomhuria&family=Lobster&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --header-height: 3.5rem;
+    --header-height: 10rem;
 
     --first-color: hsl(358, 54%, 48%);
     --first-color-alt: hsl(358, 54%, 46%);
@@ -151,10 +151,10 @@ img {
 
 .nav {
     position: relative;
-    height: var(--header-height);   
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 2rem 0;
 }
 
 .nav__logo {
@@ -261,9 +261,6 @@ img {
     .container{
         margin-inline: auto;
     }
-    .nav{
-        height: calc(var(--header-height) + 2rem);
-    }
     .nav__toggle,
     .nav__close {
         display: none;
@@ -358,6 +355,55 @@ img {
     .home__leaf-3 {
         width: 35px;
         bottom: 2.5rem;
+    }
+    .about__container {
+        grid-template-columns: 350px 530px;
+        column-gap: 13rem;
+        align-items: center;
+        padding-block: 2rem 5rem;
+    }
+
+    .about__data {
+        order: 1;
+        text-align: initial;
+    }
+    .about__data :is(.section__title, .section__subtitle){
+        text-align: initial;
+    }
+
+    .about__description {
+        margin-bottom: 3.5rem;
+    }
+    .about__flower-1 {
+        width: 30px;
+        right: 9rem;
+    }
+    .about__flower-2 {
+        width: 30px;
+        left: 0;
+        bottom: -5rem;
+    }
+    .about__leaf {
+        width: 40px;
+        top: 0;
+        bottom: 0;
+        margin-block: auto;
+    }
+    .about__text {
+        font-size: 17rem;
+        white-space: nowrap;
+        bottom: -9rem;
+        left: -1.5rem;
+    }
+
+    .about__blob {
+        width: 350px;
+        height: 560px;
+        margin-left: 0;
+    }
+    .about__img {
+        width: 420px;
+        right: -6rem;
     }
 }
 
@@ -500,10 +546,14 @@ img {
         width: 280px;
         height: 280px;
     }
+    .about__text {
+        font-size: 8rem;
+    }
 }
 
 @media screen and (width <= 540px) {
-    .home__container {
+    .home__container
+    .about__container{
         grid-template-columns: 400px;
         justify-content: center;
     }
@@ -547,4 +597,85 @@ img {
 .button:hover {
     background-color: var(--first-color-alt);
     box-shadow: 0 0px 8px hsla(358 , 54%, 24%, .3);
+}
+
+body {
+    height: 1000vh;
+}
+
+.scroll-header {
+    box-shadow: 0 2px 16px hsla(0 , 0%, 0%, .15);
+}
+
+
+.about__container {
+    row-gap: 3rem;
+    padding-bottom: 3rem;
+}
+
+.about__data {
+    text-align: center;
+    position: relative;
+}
+
+.about__description {
+    margin-bottom: 2rem;
+}
+
+.about__data img,
+.about__text {
+    position: absolute;
+}
+
+.about__flower-1 {
+    width: 20px;
+    top: .5rem;
+    right: 2rem;
+}
+.about__flower-2 {
+    width: 20px;
+    left: 2rem;
+    bottom: 2rem;
+}
+.about__leaf {
+    width: 30px;
+    right: 2rem;
+    bottom: 4rem;
+}
+
+.about__text {
+    bottom: -4rem;
+    left: 0;
+    left:0;
+    font-size: 10rem;
+    font-weight: var(--font-medium);
+    color: var(--body-color-alt);
+    z-index: -1;
+}
+
+.about__images {
+    position: relative;
+    justify-self: center;
+}
+
+.about__blob {
+    width: 200px;
+    height: 320px;
+    background-color: var(--first-color);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    margin-left: 4rem;
+}
+
+.about__img{
+    position: absolute;
+    max-width: initial;
+    width: 230px;
+    top: 0;
+    bottom: 0;
+    margin-block: auto;
+    right: 2rem;
 }
