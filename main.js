@@ -21,12 +21,6 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
-/*************  ✨ Windsurf Command ⭐  *************/
-/**
- * Adds or removes the 'scroll-header' class from the header element
- * when the page is scrolled more than 50px from the top.
- */
-/*******  5dc1ed44-827e-4b7b-8630-d67857ca0eff  *******/
     const scrollHeader = () =>{
         const header = document.getElementById('header');
         this.scrollY >= 50 ? header.classList.add('scroll-header')
